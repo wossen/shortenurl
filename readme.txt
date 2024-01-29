@@ -42,7 +42,7 @@ Scenarios: these scenarios will be used for our integration tests.
 				   If same API is called repeatedly the clickCount value in returned response increments each time.
 				   
 		     
-		      Scenario 3:
+		      Scenario 3: (needs APi Key)
 			  
 			       API: GET /shorten-url/api/shorturl
 			       
@@ -71,17 +71,20 @@ Build and management tool: Maven
 
 IDE: Eclipse (Version 2023-12)
 
+
+How to Deploy to Wildlfy server: (War file is included at the root of this project).
+
+Wildfly runs on localhost 8080 by default and this application uses this default host:port
+
+1. Get the latest Wildfly Zip - WildFly 31 Final (also test on Wildfly 29)
+2. Got to the bin folder and run standalone.bat(Windows) or standalone.sh(Linux)
+3. Drop the shorten-url.war file into standalone/deploymets folder. (War file is found at the root of this project).
+
 Note: Cucumber integration tests are included in this project. However, as they are integration tests, they need a running instance of this app to run against and pass. 
       Therefore, they are disabled by default so they don't interfere with generating artifacts (while running mvn install). Once we have a running instance of the app,
       they can be enabled by removing the @ignore tag applied in the cucumber feature file. The file is named ShortenUrlTests.feature and exists in src/test/resource inside 
       functionalTests folder. In this file, please remove the @ignore tag on line 19.				  
 
 
-How to Deploy to Wildlfy server:
-Wildfly runs on localhost 8080 by default and this application uses this default host:port
-
-1. Get the latest Wildfly Zip - WildFly 31 Final (also test on Wildfly 29)
-2. Got to the bin folder and run standalone.bat(Windows) or standalone.sh(Linux)
-3. Drop the shorten-url.war file into standalone/deploymets folder. (Found at the root of this project).
 
 
