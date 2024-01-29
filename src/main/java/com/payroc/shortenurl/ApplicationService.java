@@ -3,6 +3,7 @@ package com.payroc.shortenurl;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.payroc.shortenurl.apikey.AuthenticationFilter;
 import com.payroc.shortenurl.exceptions.EntityNotFoundMapper;
 import com.payroc.shortenurl.exceptions.NoResultExceptionMapper;
 import com.payroc.shortenurl.jaxrs.UrlShortnerController;
@@ -40,6 +41,7 @@ public class ApplicationService extends Application {
 		classes.add(EntityNotFoundMapper.class);
 		classes.add(RequestLoggingFilter.class);
 		classes.add(ResponseLoggingFilter.class);
+		classes.add(AuthenticationFilter.class);
 		return classes;
 	}
 

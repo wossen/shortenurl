@@ -48,7 +48,7 @@ Scenarios: these scenarios will be used for our integration tests.
 				   HTTP Method: GET
 				   
 
-Application Server: Wildfly 29
+Application Server: Wildfly 29, Wildfly 31 (latest)
 database: Wildfly H2 in-memory database. It ships in JBoss EAP and WildFly application server 
 
 Java EE technologies: Core Java, Jaxrs, CDI, JPA 
@@ -67,5 +67,10 @@ Note: Cucumber integration tests are included in this project. However, as they 
       functionalTests folder. In this file, please remove the @ignore tag on line 19.				  
 
 
+How to Deploy to Wildlfy server:
+Wildfly runs on localhost 8080 by default and this application uses these default host:port
+1. Get the latest Wildfly Zip - WildFly 31 Final (also test on Wildfly 29)
+2. Got to the bin folder and run standalone.bat(Windows) or standalone.sh(Linux)
+3. Drop the shoren-url.war file into standalone/deploymets folder.
 
 

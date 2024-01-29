@@ -1,6 +1,7 @@
 package com.payroc.shortenurl.jaxrs;
 import java.util.List;
 
+import com.payroc.shortenurl.apikey.KeyRequired;
 import com.payroc.shortenurl.cdi.UrlShortnerDAOService;
 import com.payroc.shortenurl.jpa.UrlEntity;
 import com.payroc.shortenurl.jpa.UrlRequest;
@@ -30,14 +31,18 @@ public class UrlShortnerController {
 
 
 	/**
-	 * List all the enties in database, a handy API to see the entries added to our database
-	 * Accessing this through API KEY is the plan 
+	 * List all the entries in database, a handy API to see the entries added to our database
+	 * For this API access, the request header needs to add APK-KEY  
+	 * Key: API-KEY
+	 * Value: MY-SECRET-API-KEY
 	 * 
 	 * @Log annotation allows the LoggingFilter to intercept this REST endpoint.
-	 * 
+	 * @KeyRequired intercepts call to authorize user  
 	 */
-	@Log
+	
 	@GET
+	@Log
+	@KeyRequired
 	@Produces("application/json")
 	public List<UrlEntity> getAll() {
 		return urlShortnerDAOService.findAll();
