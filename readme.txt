@@ -76,9 +76,10 @@ How to Deploy to Wildlfy server: (War file is included at the root of this proje
 
 Wildfly runs on localhost 8080 by default and this application uses this default host:port
 
-1. Get the latest Wildfly Zip - WildFly 31 Final (also test on Wildfly 29)
-2. Got to the bin folder and run standalone.bat(Windows) or standalone.sh(Linux)
-3. Drop the shorten-url.war file into standalone/deploymets folder. (War file is found at the root of this project).
+1. Get the latest Wildfly Zip - WildFly 31 Final. (also tested on Wildfly 29)
+2. Unzip to a location of your choice, go to the bin folder and run standalone.bat(Windows) or standalone.sh(Linux). That starts Wildfly in standalone mode.
+3. Drop the shorten-url.war file into standalone/deploymets/ folder. (War file is found at the root of this project).
+4. Wildfly automaticall deploys thw war file and can be accessed at http://localhost:8080/shorten-url/api/shorturl
 
 Note: Cucumber integration tests are included in this project. However, as they are integration tests, they need a running instance of this app to run against and pass. 
       Therefore, they are disabled by default so they don't interfere with generating artifacts (while running mvn install). Once we have a running instance of the app,
