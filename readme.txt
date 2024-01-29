@@ -55,7 +55,7 @@ Java EE technologies: Core Java, Jaxrs, CDI, JPA
 
 Java JDK Version: 17
 
-Testing tools and Farmeworks: RestAssured, Cucumber, Junit
+Testing tools and Farmeworks: RestAssured, Cucumber, Junit, Mockito
 
 Build and management tool: Maven
 
