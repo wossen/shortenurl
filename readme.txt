@@ -10,7 +10,7 @@ Scenarios: these scenarios will be used for our integration tests.
 
    1. Given a long URL, (POST request passing URL as payload in request body), it should generate a unique Short URL
    2. Given a short URL, (GET request passing tiny URL as path parameter), should return to the original URL. This also counts the number of times the url has been accessed.
-   3. A simple Rest GET request will display all the URL entries stored in our database.
+   3. A simple Rest GET request will display all the URL entries stored in our database. (Note: requires API-KEY value in request headers)
 
 
     Please note: The wildfly server needs to run locally on the default 8080 port.
@@ -39,13 +39,23 @@ Scenarios: these scenarios will be used for our integration tests.
 				 
 				   HTTP Method: GET
 				   
+				   If same API is called repeatedly the clickCount value in returned response increments each time.
+				   
+		     
 		      Scenario 3:
 			  
 			       API: GET /shorten-url/api/shorturl
+			       
+			       (please pass the following Key/Value in request header for authorized call)
+			       
+			       Key: API-KEY
+			       Value: MY-SECRET-API-KEY
+			       
+			       HTTP Method: GET
 			  
 			       eg: http://localhost:8080/shorten-url/api/shorturl
 				   
-				   HTTP Method: GET
+				   
 				   
 
 Application Server: Wildfly 29, Wildfly 31 (latest)
@@ -68,9 +78,10 @@ Note: Cucumber integration tests are included in this project. However, as they 
 
 
 How to Deploy to Wildlfy server:
-Wildfly runs on localhost 8080 by default and this application uses these default host:port
+Wildfly runs on localhost 8080 by default and this application uses this default host:port
+
 1. Get the latest Wildfly Zip - WildFly 31 Final (also test on Wildfly 29)
 2. Got to the bin folder and run standalone.bat(Windows) or standalone.sh(Linux)
-3. Drop the shoren-url.war file into standalone/deploymets folder.
+3. Drop the shorten-url.war file into standalone/deploymets folder. (Found at the root of this project).
 
 
