@@ -26,6 +26,31 @@
 			<version>2.2.224</version>
 		</dependency>
 
+		<!--
+		https://mvnrepository.com/artifact/org.hibernate/hibernate-core-jakarta -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core-jakarta</artifactId>
+			<version>5.6.15.Final</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/jakarta.el/jakarta.el-api -->
+		<dependency>
+			<groupId>jakarta.el</groupId>
+			<artifactId>jakarta.el-api</artifactId>
+			<version>5.0.1</version>
+		</dependency>
+
+
+		<!--
+		https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>7.0.5.Final</version>
+		</dependency>
+
 
 		<!--Cucumber integration testing dependency  -->
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
@@ -142,6 +167,14 @@
 			<artifactId>mockito-junit-jupiter</artifactId>
 			<version>5.10.0</version>
 			<scope>test</scope>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/org.eclipse.microprofile.health/microprofile-health-api -->
+		<dependency>
+			<groupId>org.eclipse.microprofile.health</groupId>
+			<artifactId>microprofile-health-api</artifactId>
+			<version>4.0.1</version>
 		</dependency>
 
 

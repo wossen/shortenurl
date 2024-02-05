@@ -6,6 +6,7 @@ import java.util.Set;
 import com.payroc.shortenurl.apikey.AuthenticationFilter;
 import com.payroc.shortenurl.exceptions.EntityNotFoundMapper;
 import com.payroc.shortenurl.exceptions.NoResultExceptionMapper;
+import com.payroc.shortenurl.jaxrs.Healthcheck;
 import com.payroc.shortenurl.jaxrs.UrlShortnerController;
 import com.payroc.shortenurl.logging.RequestLoggingFilter;
 import com.payroc.shortenurl.logging.ResponseLoggingFilter;
@@ -37,6 +38,7 @@ public class ApplicationService extends Application {
 	@Override
 	public Set<Class<?>> getClasses(){
 		classes.add(UrlShortnerController.class);
+		classes.add(Healthcheck.class);
 		classes.add(NoResultExceptionMapper.class);
 		classes.add(EntityNotFoundMapper.class);
 		classes.add(RequestLoggingFilter.class);

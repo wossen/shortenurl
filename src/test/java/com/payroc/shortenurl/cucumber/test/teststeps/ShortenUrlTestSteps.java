@@ -4,7 +4,9 @@ import static org.testng.Assert.assertNotNull;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
+import com.payroc.shortenurl.cucumber.test.ConfigReader;
 import com.payroc.shortenurl.cucumber.test.UrlResponse;
 
 import io.cucumber.java.en.Given;
@@ -18,14 +20,16 @@ public class ShortenUrlTestSteps extends AbstractRestAssuredTestSteps {
 	UrlResponse longUrlResponse;
 	String tinyUrl;
 	String longUrl;
+	
+	Properties prop = ConfigReader.getConfiguration(); 
     
     
     @Given("a long URL")
     public void setupLongUrl() throws Throwable
     {
-    	 RestAssured.baseURI = "http://localhost:8080";
-         RestAssured.basePath = "/shorten-url/api";
-         longUrl = "https://projects.eclipse.org/projects/ee4j.jakartaee-platform/releases/11";
+    	 RestAssured.baseURI = prop.getProperty("baseURI");
+         RestAssured.basePath = prop.getProperty("basePath");
+         longUrl = prop.getProperty("longUrl");;
     }
     
     @When("I Post ShortenUrl API passing the Long URL as payload")
@@ -47,9 +51,9 @@ public class ShortenUrlTestSteps extends AbstractRestAssuredTestSteps {
     @Given("Having a unique Short URL")
     public void setupShortUrl() throws Throwable
     {
-    	 RestAssured.baseURI = "http://localhost:8080";
-         RestAssured.basePath = "/shorten-url/api";
-         longUrl = "https://projects.eclipse.org/projects/ee4j.jakartaee-platform/releases/11";
+    	RestAssured.baseURI = prop.getProperty("baseURI");
+        RestAssured.basePath = prop.getProperty("basePath");
+        longUrl = prop.getProperty("longUrl");;
     }
     
     

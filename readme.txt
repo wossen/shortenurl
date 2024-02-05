@@ -1,4 +1,20 @@
 
+Second round commit in preparation for interview. 
+
+Application is updated with the following added functionalities:
+
+- Added CDI Qualifiers to demo the use of Qualifiers in CDI
+- Added two implementation classes for url shortener functionality (base62 and base36). These two classes implement UrlShortenerUtil interface and Qualifiers are used to tell container which implementations to instantiate at runtime.
+- Jaxrs Healthcheck class resource to perform application and database health checks.
+- JPA integration test to test our CRUD and JPQL oprations within JPA 
+- Added an HTTP client class that runs in mutithreaded way. The three runnable classes represent our main use cases
+			1. Get short url from original url 
+			2.  Get original url from short url
+			3.  List all url entries in our database
+- Added properties file to move configuarble properties from cucumber test class.
+
+================================
+
 Initiative: Url Shortner
    Design and build a restful Url Shortener service that creates a short/tiny url from a very long URL. 
 

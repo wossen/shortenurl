@@ -16,10 +16,11 @@ import jakarta.transaction.Transactional;
 @ApplicationScoped
 public class UrlShortnerDAOService {
 
-	@PersistenceContext
+	@PersistenceContext(unitName="primary")
 	private EntityManager entityManager;
 
 	@Inject
+	@BaseSixtyTwo   //Here is is annotated with base62 qualifier so the base62 implementation get instantiated by the CDI manager
 	private UrlShortenerUtil util;
 
 	@Inject

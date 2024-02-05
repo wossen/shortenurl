@@ -8,14 +8,15 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.payroc.shortenurl.cdi.UrlShortenerUtil;
+import com.payroc.shortenurl.cdi.UrlShortenerUtil_Base36;
+import com.payroc.shortenurl.cdi.UrlShortenerUtil_Base62;
 
 
 @ExtendWith(MockitoExtension.class)
 public class UrlShortnerUtilTest {
 
 	@InjectMocks
-	UrlShortenerUtil util;
+	UrlShortenerUtil_Base62 util;
 
 	private static String TINY_URL_PREFIX;
 	private String TINY_URL;
