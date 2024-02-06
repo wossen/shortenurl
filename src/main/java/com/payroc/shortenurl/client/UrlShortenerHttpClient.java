@@ -27,9 +27,9 @@ public class UrlShortenerHttpClient {
 
 		//Use all threads to execute our API calls
 		for(int i=0; i<threadNum; i++) {
-			//executor.execute(tinyUrlReturnRunnable);
+			executor.execute(tinyUrlReturnRunnable);
 			//executor.execute(origUrlGetRunnable);
-			executor.execute(listAllGetRunnable);
+			//executor.execute(listAllGetRunnable);
 		}
 
 
